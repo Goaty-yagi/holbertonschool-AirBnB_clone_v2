@@ -69,3 +69,6 @@ class DBStorage:
     @property
     def session(self):
         return self.__session
+
+    def close(self):
+        self.__session.close()
