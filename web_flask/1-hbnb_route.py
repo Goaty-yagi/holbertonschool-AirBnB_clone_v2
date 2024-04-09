@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+This module provides flask app routing certain view pages.
+"""
 from flask import Flask
 
 app = Flask(__name__)
