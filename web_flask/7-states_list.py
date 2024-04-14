@@ -10,15 +10,10 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.route("/states_list", strict_slashes=False)
-def states():
-    """ Print out HTML lisitng out all States """
-    states_list = storage.all(State)
-    sorted_states = sorted(states_list.values(), key=lambda s: s.name)
-
-    # print(sorted_states)
-
-    return render_template('7-states_list.html', states_list=sorted_states)
+@app.route('/states_list', strict_slashes=False)
+def states_list():
+    states = storage.all(State)
+    return render_template('7-states_list.html', states=states)
 
 
 if __name__ == "__main__":
